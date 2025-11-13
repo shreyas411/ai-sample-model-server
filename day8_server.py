@@ -5,6 +5,7 @@ from pydantic import BaseModel
 from openai import OpenAI
 import config
 import json
+import os
 
 # create server
 app = FastAPI(title="API Server")
@@ -18,7 +19,7 @@ app.add_middleware(
 )
 
 # create client
-client = OpenAI(base_url=config.BASE_URL, api_key=config.HF_TOKEN)
+client = OpenAI(base_url=config.BASE_URL, api_key=os.getenv("HF_TOKEN"))
 model = config.MODEL["qwen"]
 
 
@@ -76,3 +77,4 @@ def keywords(text: TextRequest):
         max_tokens=100,
     )
     return json.loads(response.choices[0].message.content)
+
