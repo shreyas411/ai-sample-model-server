@@ -1,4 +1,4 @@
-HF_TOKEN = "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"
+#HF_TOKEN = "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"
 BASE_URL = "https://router.huggingface.co/v1"
 MODEL = {
     "meta_70": "meta-llama/Llama-3.3-70B-Instruct",
@@ -7,4 +7,5 @@ MODEL = {
     "mistral": "mistralai/Mistral-7B-Instruct-v0.3",
     "phi": "microsoft/Phi-3-mini-4k-instruct",
 }
+
 
